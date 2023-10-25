@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Generator</title>
+
+    <!-- bootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css"/>
+
+
+
+</head>
+<body>
+    <!-- the html code /backbone starts from here -->
+
+    <!-- here we are using bootstrap to make header to center using class -->
+    <div class="container" id="cv-form">
+        <h1 class = "text-center my-2">Resume Generator</h1>
+        <p class = "text-center"> By Shah Arifur Rahman Rhyme</p>
+
+        <div class="row">
+            <div class="col-md-6">
+                <!-- first column in the left with 6 rows -->
+                <h3>Personal information</h3>
+
+                <!-- for entering personal details -->
+                <div class="form-group">
+                    <label for="nameField">Your Name</label>
+                    <input type="text" id = nameField placeholder="Enter here" class="form-control">
+                </div>
+
+                <div class="form-group mt-3">
+                    <label for="phoneField">Your Phone Number</label>
+                    <input type="text" id = phoneField placeholder="Enter here" class="form-control">
+                </div>
+
+                <div class="form-group mt-3">
+                    <label for="addressField">Your Address</label>
+                    <textarea id = addressField placeholder="Enter here" class="form-control" rows="4"></textarea>  
+                </div>
+
+                <p class="text-info my-3 text-opacity-75" >Important Links</p>
+
+                <div class="form-group mt-3">
+                    <label for="lkdField">Linkendin Link</label>
+                    <input type="text" id = lkdField placeholder="Enter here" class="form-control">
+                </div>
+
+                <div class="form-group mt-3">
+                    <label for="githubField">Github Link</label>
+                    <input type="text" id = githubField placeholder="Enter here" class="form-control">
+                </div>
+
+                <div class="form-group mt-3">
+                    <label for="mediaField">Social Media Link</label>
+                    <input type="text" id = mediaField placeholder="Enter here" class="form-control">
+                </div>
+
+
+
+
+
+            </div>
+            <div class="col-md-6">
+                <!-- second column in the right with 6 row-->
+                <h3>Experience details</h3>
+
+                <div class="form-group mt-3">
+                    <label for="">About Yourself</label>
+                    <textarea class="form-control" id="aboutYourslfField" placeholder="Enter here" class="form-control" rows="5"></textarea>  
+                </div>
+
+                <div class="form-group mt-3" id="experiences">
+                    <label for="">Experience</label>
+                    <textarea class="form-control experienceField" placeholder="Enter here" class="form-control" rows="3"></textarea>  
+                </div>
+
+                <div class="container text-end mt-3 " id="experienceButton">
+                    <button onclick="addNewExperienceField()" class="btn-primary btn-sm btn">Add</button>
+                </div>
+
+
+                <div class="form-group mt-3" id="aq">
+                    <label for="">Academic Qualifications</label>
+                    <textarea class="form-control academicField" placeholder="Enter here" class="form-control" rows="3"></textarea>  
+                </div>
+
+                <div class="container text-end mt-3 " id="academicButton">
+                    <button  onclick="addNewAQbutton()" class="btn-primary btn-sm btn">Add</button>
+                </div>
+
+            </div>
+        </div>
+        <div class="container text-center my-3">
+            <button onclick="generateResume()" class="btn btn-primary btn-lg">Build my Resume</button>
+        </div>
+    </div>
+
+
+    <!-- now lets make the resume structure -->
+    <div class="container" id="cv-template">
+        <div class="row">
+            <!-- first column in the left -->
+            <div class="col-md-4 text-center py-5 background">
+                <img src="https://img.freepik.com/free-vector/illustration-user-avatar-icon_53876-5907.jpg?w=900&t=st=1698204698~exp=1698205298~hmac=f8266190560d0b7bd0bd3881730a519098dc635c3b71669f52ca3a71cb40c37d" 
+                alt=""
+                class="img-fluid myimg">
+                <p id="nameT">Shah Arifur Rahman Rhyme</p>
+                <p id="phoneT">+88 01787968671</p>
+                <p id="addressT">Borogurgola, Sadar, Dinajpur</p>
+
+                <hr style="margin: 4%;">
+                <p><a  id="linkT" href="#1">Linkendin.com/Shah Arifur Rahman Rhyme</a></p>
+                <p><a id="gitT" href="#1">facebook.com/Shah Arifur Rahman Rhyme</a></p>
+                <p><a  id="FbT" href="#1">github.com/Shah Arifur Rahman Rhyme</a></p>
+            </div>
+            <div class="col-md-8 py-5">
+                <!-- second column to the right -->
+                <h1 class="text-center" style="font-weight: 500;" id="bignameT">shah arifur Rahman Rhyme</h1>
+
+                <!-- Objectives card -->
+                <div class="card mt-4">
+                    <div class="card-header  objCardColor" >
+                        <h3>
+                            Objectives
+                        </h3>
+                    </div>
+                    
+                   <!-- sub card -->
+                    <div class="card-body"> 
+                        <p id="objectiveT">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt ratione temporibus distinctio nemo corrupti error aliquam tenetur quaerat magni et! Ullam incidunt rerum eveniet, exercitationem inventore perspiciatis soluta facere adipisci velit hic, eaque nobis quod voluptatibus commodi itaque veritatis aliquid perferendis ea error! Dignissimos eligendi, excepturi porro minus itaque tempore.
+
+                        </p>
+                    </div>
+                </div>
+
+
+
+
+
+
+                 <!-- experiences card -->
+                 <div class="card mt-4">
+                    <div class="card-header  objCardColor" >
+                        <h3>
+                            Experience
+                        </h3>
+                    </div>
+                    
+                   <!-- sub card -->
+                    <div class="card-body"> 
+                        <ul style="margin: auto;" id="experienceT">
+                            <li >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur, et.</li>
+                            <li >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur, et.</li>
+                            <li >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur, et.</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+
+
+
+                 <!-- Academic Qualifications card -->
+                 <div class="card mt-4">
+                    <div class="card-header  objCardColor" >
+                        <h3>
+                            Academic Qualifications
+                        </h3>
+                    </div>
+                    
+                   <!-- sub card -->
+                    <div class="card-body"> 
+                        <ul style="margin: auto;" id="academicQT">
+                            <li >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur, et.</li>
+                            <li >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur, et.</li>
+                            <li >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur, et.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- button -->
+
+                <div class="container mt-3 text-center">
+                    <button onclick="printResume()" class="btn background"> Print Resume</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- script from bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!-- the functionality is given below in the js file -->
+    <script src="resumeScript.js"></script>
+    
+</body>
+</html>

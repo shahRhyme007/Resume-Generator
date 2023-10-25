@@ -1,0 +1,21 @@
+body{
+    background:white;
+}
+
+
+ #cv-template{
+    display: none;
+ }
+
+.myimg {
+    border-radius: 50%;
+    width: 180px;
+}
+.background{
+    background-color:darkseagreen;
+}
+
+.objCardColor{
+    background-color: cadetblue;
+}
+
